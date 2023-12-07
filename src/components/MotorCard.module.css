@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  color: darkslategrey;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.container p {
+  margin: 0;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.marca {
+  width: 40%;
+  font-weight: bold;
+}
+.marca p {
+  margin: 0;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  text-align: end;
+}
+
+.data p {
+  margin: 0;
+  align-self: self-end;
+}
+
+.client {
+  width: 100%;
+  text-align: center;
+  border-top: 1px dashed darkslategrey;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}

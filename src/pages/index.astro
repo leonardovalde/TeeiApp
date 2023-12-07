@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MotorCard from '../components/MotorCard';
+import motors from '../mock/motors.json';
+import { getMotors } from '../services/api';
+interface motorType {
+  Rodamientos: string
+  Ranuras: string
+  Corriente: string
+  Paso: string
+  longitudRotor: string
+  CalibreAlambre: string
+  TipoDeConexion: string
+  TipoDeMotor: string
+  Voltaje: string
+  NumeroDeEspiras: string
+  diametroRotor: string
+  Marca: string
+  RevolucionesPorMinuto: string
+  NumeroDeGrupos: string
+  Notas: string
+  Potencia: string
+  CaballosDeFuerza: string
+  Cliente: string
+}
+const apiKey = import.meta.env.PUBLIC_API_KEY;
+console.log(apiKey);
+
+
+const motorsList : {record: motorType[]} = await getMotors(apiKey);
+console.log(motorsList.record);
+
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<div class="motorList">
+			{motorsList.record.map((motor: motorType) => (
+				<MotorCard client:load motor={motor} />
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.header h1{
+		color: ghostwhite;
+
+	}
+	.motorList{
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		max-height: calc(100vh - 130px);
+		overflow-y: auto;
+	}
+	.motorList::-webkit-scrollbar {
+		display: none;
+	}
+</style>
