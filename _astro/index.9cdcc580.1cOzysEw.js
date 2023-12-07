@@ -1,0 +1,1 @@
+const n="_container_16slk_1",t="_info_16slk_29",c="_marca_16slk_39",o="_data_16slk_55",a="_client_16slk_81",e={container:n,info:t,marca:c,data:o,client:a},_="_container_143z5_1",s="_content_143z5_31",i={container:_,content:s};export{i as S,e as a};
