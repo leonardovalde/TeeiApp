@@ -36,7 +36,7 @@ console.log(motorsList.record);
 <Layout title="Welcome to Astro.">
 	<main>
 		<div class="motorList">
-			{motorsList.record.map((motor: motorType) => (
+			{motorsList && motorsList.record && motorsList.record.map((motor: motorType) => (
 				<MotorCard client:load motor={motor} />
 			))}
 		</div>
