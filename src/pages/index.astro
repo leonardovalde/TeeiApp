@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import MotorCard from '../components/MotorCard';
-import motors from '../mock/motors.json';
 import { getMotors } from '../services/api';
 interface motorType {
   Rodamientos: string
@@ -25,10 +24,7 @@ interface motorType {
 }
 const apiKey = import.meta.env.PUBLIC_API_KEY;
 console.log(apiKey);
-
-
 const motorsList : {record: motorType[]} = await getMotors(apiKey);
-console.log(motorsList.record);
 
 
 ---
@@ -36,9 +32,9 @@ console.log(motorsList.record);
 <Layout title="Welcome to Astro.">
 	<main>
 		<div class="motorList">
-			{motorsList && motorsList.record && motorsList.record.map((motor: motorType) => (
+			{motorsList && motorsList.record ? motorsList.record.map((motor: motorType) => (
 				<MotorCard client:load motor={motor} />
-			))}
+			)): <>Cargando...</>}
 		</div>
 	</main>
 </Layout>
