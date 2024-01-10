@@ -1,0 +1,33 @@
+.container {
+  position: absolute;
+  display: flex;
+  right: 10%;
+  bottom: 10%;
+}
+
+.addButton {
+  background-color: #4caf50; /* Color verde */
+  color: green; /* Color blanco para el texto */
+  font-weight: 800;
+  border: none;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 4px;
+  cursor: pointer;
+  border-radius: 50%;
+  /* Agrega más estilos según tus necesidades */
+}
+
+.addPannel{
+    
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}

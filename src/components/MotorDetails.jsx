@@ -25,8 +25,8 @@ function MotorDetails(props) {
                     <li><strong>Paso:</strong> {motor.Paso}</li>
                     <li><strong>Longitud del Rotor:</strong> {motor.longitudRotor}</li>
                     <li><strong>Calibre de Alambre:</strong> {motor.CalibreAlambre}</li>
-                    <li><strong>Tipo de Conexión:</strong> {motor.TipoDeConexion}</li>
-                    <li><strong>Tipo de Motor:</strong> {motor.TipoDeMotor}</li>
+                    <li><strong>Tipo de Conexión:</strong> {motor.TipoDeConexion === '4' ? 'Doble Estrella' : motor.TipoDeConexion === '1' ? 'Triangulo' : motor.TipoDeConexion === '3' ? 'Estrella' : 'Doble Triangulo'}</li>
+                    <li><strong>Tipo de Motor:</strong> {motor.TipoDeMotor === 'T' ? 'Trifasico' : 'Bifasico'}</li>
                     <li><strong>Voltaje:</strong> {motor.Voltaje}</li>
                     <li><strong>Número de Espiras:</strong> {motor.NumeroDeEspiras}</li>
                     <li><strong>Diámetro del Rotor:</strong> {motor.diametroRotor}</li>

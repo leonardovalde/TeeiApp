@@ -13,7 +13,9 @@ function MotorCard(props) {
                     {props.motor.Marca}
                 </div>
                 <div className={Styles.data} >
+                    <p className={Styles.label}>hp:</p>
                     <p>{motor.CaballosDeFuerza}</p>
+                    <p className={Styles.label}>Ranuras:</p>
                     <p>{motor.Ranuras}</p>
                 </div>
             </section>

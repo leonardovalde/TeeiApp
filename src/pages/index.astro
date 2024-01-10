@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import MotorCard from '../components/MotorCard';
 import { getMotors } from '../services/api';
+import AddMotor from '../components/AddMotor';
 interface motorType {
   Rodamientos: string
   Ranuras: string
@@ -35,6 +36,7 @@ const motorsList : {record: motorType[]} = await getMotors(apiKey);
 			{motorsList && motorsList.record ? motorsList.record.map((motor: motorType) => (
 				<MotorCard client:load motor={motor} />
 			)): <>Cargando...</>}
+			{motorsList && motorsList.record && <AddMotor client:load/>}
 		</div>
 	</main>
 </Layout>
